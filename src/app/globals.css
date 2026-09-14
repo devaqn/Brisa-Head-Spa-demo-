@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+/* O CLI do Originkit escreve em src/components/originkit — o Tailwind precisa
+   varrer essa pasta ou as classes dos componentes somem no build. */
+@source "../components/originkit";
+
+@theme {
+  --font-sans: var(--fonte-corpo), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--fonte-titulo), Georgia, "Times New Roman", serif;
+
+  /* Paleta tirada do material da cliente: o logotipo e um perfil dourado sobre
+     marrom escuro (#2c1c06 a #8f793d na amostra), e a media das fotos do espaco
+     cai em marrom quente e terracota. Nada de verde-spa generico: o lugar dela
+     e madeira, latao e luz baixa. */
+  --color-fundo: #0c0907;
+  --color-superficie: #14100c;
+  --color-superficie-2: #1c1713;
+  --color-linha: #2b231c;
+  --color-texto: #f5f1ea;
+  --color-suave: #b0a394;
+
+  /* Dourado do logo, clareado o suficiente para passar contraste sobre o
+     fundo escuro — o #8f793d original fica ilegivel como texto. */
+  --color-marca: #c9a55f;
+  --color-marca-claro: #e3c98d;
+  --color-marca-escuro: #3b2a11;
+
+  /* Terracota: media real das fotos da bandeja e da madeira. */
+  --color-terracota: #c77f50;
+  /* Superficie clara, cor das toalhas — usada para arejar as secoes. */
+  --color-areia: #ece4d7;
+  --color-areia-linha: #d8cbb8;
+  --color-areia-texto: #2b231c;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Altura do cabecalho fixo (4rem) + folga, para a ancora nao sumir. */
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-fundo);
+    color: var(--color-texto);
+    /* O celular e a tela principal deste site: veio do Instagram. */
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-marca);
+    color: var(--color-fundo);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-marca);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  summary {
+    cursor: pointer;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Textura discreta: pontos quase invisiveis que dao profundidade ao fundo
+   escuro sem virar padrao chamativo. */
+@utility fundo-pontos {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    color-mix(in oklab, var(--color-marca) 9%, transparent) 1px,
+    transparent 0
+  );
+  background-size: 28px 28px;
+}
+
+/* Fio dourado usado como separador entre secoes. */
+@utility fio-marca {
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklab, var(--color-marca) 55%, transparent),
+    transparent
+  );
+}
+
+/* Um site que vende desaceleracao nao pode ignorar quem pediu menos
+   movimento. Mata as animacoes dos componentes do Originkit tambem. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

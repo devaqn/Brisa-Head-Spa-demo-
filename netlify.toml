@@ -1,0 +1,40 @@
+# Publicacao do site estatico gerado pelo Next (`output: "export"` -> pasta out/).
+[build]
+  command = "pnpm build"
+  publish = "out"
+
+[build.environment]
+  # Fixa a versao do Node no build do Netlify: reproduzivel e independente
+  # da versao instalada na maquina de desenvolvimento.
+  NODE_VERSION = "22"
+  NPM_FLAGS = "--version"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Assets versionados pelo Next podem ser cacheados de forma agressiva.
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# As fotos tem nome fixo, entao cache mais curto para a troca pelos originais
+# da cliente aparecer sem precisar limpar nada.
+[[headers]]
+  for = "/fotos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# A imagem de previa do link e gerada pelo Next sem extensao (out/opengraph-image).
+# Sem esta regra o Netlify serviria como octet-stream e o WhatsApp nao exibiria
+# a previa ao compartilhar o endereco do site.
+[[headers]]
+  for = "/opengraph-image"
+  [headers.values]
+    Content-Type = "image/png"
+    Cache-Control = "public, max-age=86400"

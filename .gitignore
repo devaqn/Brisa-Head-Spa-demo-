@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+.netlify/
+.originkit/
+legacy/
+next-env.d.ts
+*.tsbuildinfo
+.DS_Store
+.env*
+!.env.example
+
+# Memoria pessoal da MEGABRAIN: tem nome completo, telefone, e-mail e a lista
+# de clientes. Nao entra num repo que pode ser compartilhado com a cliente.
+# Se quiser versionar mesmo assim, e so apagar esta linha.
+CLAUDE.md

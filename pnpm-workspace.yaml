@@ -1,0 +1,7 @@
+# O unrs-resolver (usado pelo eslint-config-next) precisa rodar o script de
+# build para baixar o binario nativo. Sem isto o pnpm bloqueia a instalacao
+# e todo script do projeto passa a falhar.
+allowBuilds:
+  unrs-resolver: true
+onlyBuiltDependencies:
+  - unrs-resolver

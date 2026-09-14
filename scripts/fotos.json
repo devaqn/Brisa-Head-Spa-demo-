@@ -1,0 +1,49 @@
+{
+  "_aviso": "URLs assinadas do CDN da Meta, capturadas em 14/09/2026 do perfil publico @brisaheadspa. Expiram em cerca de 24h - nada daqui vai para producao. O que vai para o site sao os .webp gerados em public/fotos/ por otimizar-fotos.mjs.",
+  "itens": [
+    {
+      "arquivo": "logo",
+      "url": "https://scontent.cdninstagram.com/v/t51.75761-19/510960123_17849863563490639_1296656302439801633_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=101&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDI0LkMzIn0%3D&_nc_ohc=bAX1xtQ6uy8Q7kNvwGslbQO&_nc_oc=AdpRn-JfiJK1Bdora5b3pHt3BR-kv9L7Vn9kGHmNbrOcZP5OMn08LfNViLd5uvu2PvQ&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_gid=N6woa6FEY_5FiuUYOx9Tbw&_nc_ss=79689&oh=00_AQJdjZLa1v3c00x0H3OW0-Uee_s-H50UA9U8MzPhgZWmmw&oe=6AAE169F"
+    },
+    {
+      "arquivo": "espaco-01",
+      "url": "https://scontent.cdninstagram.com/v/t51.82787-15/775407244_17902387821490639_6793594608262719619_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=jL2O0AzlleIQ7kNvwFaz8rh&_nc_oc=AdqnlJTLT7Q6UnEjbxY7v4a5Uq1MVB0rp55r-muwjFJcqLm2xrLcZNwrafVysmxqY-Y&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=rTWpLJKu-Ex0GNUpXX3UrQ&_nc_ss=79689&oh=00_AQIY5tiZg_JZYOIHJzQ2sFlo1QsYWCJ17cYg8Y2cll1pYw&oe=6AAE474A"
+    },
+    {
+      "arquivo": "espaco-02",
+      "url": "https://scontent.cdninstagram.com/v/t51.82787-15/768970026_17901901779490639_4617008024356871015_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=t39Ey7_01uIQ7kNvwFSD_c5&_nc_oc=AdpdEuVo3cHg-sm7u8oNYGemmxZyparxVdZAQjD1ooyEjo3rdSCo9pf8EuXnaTPIY0k&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=rTWpLJKu-Ex0GNUpXX3UrQ&_nc_ss=79689&oh=00_AQIrdnTskULzut8dVkFG-wr0S0B_X1JOzRDvtuf5G3JG1g&oe=6AAE1C36"
+    },
+    {
+      "arquivo": "espaco-03",
+      "url": "https://scontent.cdninstagram.com/v/t51.82787-15/766052916_17900581014490639_7501017043481362489_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=J8RnzlIulQsQ7kNvwGDdIbT&_nc_oc=AdpR-XWIxX0pGJmQxUWjDH8RPkMXOZktxy9VHkUDjZ0OTe086Ak45KjAre_JEcsKi6k&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=rTWpLJKu-Ex0GNUpXX3UrQ&_nc_ss=79689&oh=00_AQK7-u-BFYP9Wk81dJA5VX4U_-lCBAeQpv-WLP5JsC7UvA&oe=6AAE3466"
+    },
+    {
+      "arquivo": "espaco-04",
+      "url": "https://scontent.cdninstagram.com/v/t51.82787-15/752823255_17898459960490639_5001915083625966107_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=ziaJJ2KJ-WMQ7kNvwGrZ3ki&_nc_oc=AdrCr8y6APzva6L9YWb5Zo8qCKNdKDHV1nzbE5zfGTogJ2ZhUXSHGTHSg-5wDZ5q2xA&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=rTWpLJKu-Ex0GNUpXX3UrQ&_nc_ss=79689&oh=00_AQLBVEpUTyFJwcVW5fEjbL5n6tLKul9WtawVYsPq8IkU1w&oe=6AAE2887"
+    },
+    {
+      "arquivo": "espaco-05",
+      "url": "https://scontent.cdninstagram.com/v/t51.82787-15/731058936_17895448461490639_8270424828085623049_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=3EI5rCTUwLQQ7kNvwFMEPvT&_nc_oc=Adop5sheaH7Z1bwB9DyrPfaoe8U-COFOA8-jK-Idmqp1Ew2r0-BObfsEYl6FLze9-Bg&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=rTWpLJKu-Ex0GNUpXX3UrQ&_nc_ss=79689&oh=00_AQI6u4XFfYF3Pcviz619HFGrPGPhPyG9BR3aQwksgPAaRw&oe=6AAE1978"
+    },
+    {
+      "arquivo": "espaco-06",
+      "url": "https://scontent.cdninstagram.com/v/t51.82787-15/730678673_17894844717490639_4259005185784814518_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=r88cTtFhilMQ7kNvwF0n6nE&_nc_oc=Adop4iVtxJhSUxz7R77zKm5GV3DwhIEuOKWn_5D9wYm4GbjsK-PAGi1JzMyv_rNJOic&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=rTWpLJKu-Ex0GNUpXX3UrQ&_nc_ss=79689&oh=00_AQIELP7ND32Vq0OrZepfOg04gMPlvOB3m8-c4e0HB6H6wg&oe=6AAE29B9"
+    },
+    {
+      "arquivo": "espaco-07",
+      "url": "https://scontent.cdninstagram.com/v/t51.71878-15/724024437_2598251543931735_4745326842388067317_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=6WiOparDFXIQ7kNvwEBNaZu&_nc_oc=AdpVNk4PCMSvKm5OPng9W3JqfDv2ED8rEyygU4jsuXh0k2qWCfuVdS8tBQGp48hNnKU&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=rTWpLJKu-Ex0GNUpXX3UrQ&_nc_ss=79689&oh=00_AQJksCTU7uJAmVtX3GEKczY-SyFuC2yGp2JhUoaHzZFgKA&oe=6AAE252F"
+    },
+    {
+      "arquivo": "espaco-08",
+      "url": "https://scontent.cdninstagram.com/v/t51.82787-15/517938100_17851945932490639_6135538893816041021_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=vH2_S_pu9AIQ7kNvwFF-MLD&_nc_oc=Adqjr3cIbL-xV_L9KK_MqL_tWboM2u1puznbQu1O2xkFDGeQbCBT7dL7xCgOWUZTt1M&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=rTWpLJKu-Ex0GNUpXX3UrQ&_nc_ss=79689&oh=00_AQIrMa-V_TncXmXFZ2Xal0sFODoZKfetjpczKchgICvMmQ&oe=6AAE21E4"
+    },
+    {
+      "arquivo": "espaco-09",
+      "url": "https://scontent.cdninstagram.com/v/t51.75761-15/503973581_17847661494490639_7331898875124990398_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=1K_6qA4QZmIQ7kNvwE8yLfu&_nc_oc=AdpEO5YUFcREUTxeJhpQC9Rjvorah0LEF2rgEB0s3I_UfhJCSqkqyUTD1aGhnaW8R9A&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=rTWpLJKu-Ex0GNUpXX3UrQ&_nc_ss=79689&oh=00_AQIIrW7PtsFfWR_dWYd5peAeBuH1dWByGYjpqL51UKrrjA&oe=6AAE37B6"
+    },
+    {
+      "arquivo": "espaco-10",
+      "url": "https://scontent.cdninstagram.com/v/t51.75761-15/509241409_17848893279490639_2000708560301920564_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=KqInE5631v8Q7kNvwGoMa4j&_nc_oc=AdpeoPTE4TgGMAwLdgxHD3fNPO_-tuducZdeR6Ff4sBjU-lq-fEFzBaJjEckrCvTfak&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=rTWpLJKu-Ex0GNUpXX3UrQ&_nc_ss=79689&oh=00_AQKFLIBuywghf3SuMiiM0SpwuXTX5NHkse5hEjLIucg3aQ&oe=6AAE3E2E"
+    }
+  ]
+}
