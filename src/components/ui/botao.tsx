@@ -12,13 +12,13 @@ const botao = cva(
   {
     variants: {
       variante: {
-        principal:
-          "bg-marca text-fundo hover:bg-marca-claro focus-visible:outline-marca-claro",
+        principal: "bg-marca text-fundo hover:bg-texto focus-visible:outline-marca",
         contorno:
           "border border-linha bg-transparent text-texto hover:border-marca hover:text-marca focus-visible:outline-marca",
-        claro:
-          "bg-areia-texto text-areia hover:bg-areia-texto/85 focus-visible:outline-areia-texto",
-        discreto: "bg-superficie-2 text-texto hover:bg-linha focus-visible:outline-marca",
+        /** Para usar sobre as secoes de fundo marrom. */
+        claro: "bg-creme text-escuro hover:bg-white focus-visible:outline-creme",
+        contornoClaro:
+          "border border-creme/35 text-creme hover:border-creme hover:bg-creme/10 focus-visible:outline-creme",
       },
       tamanho: {
         padrao: "px-6 py-3",
@@ -35,11 +35,7 @@ const botao = cva(
       { largura: "cheia", tamanho: "padrao", class: "px-4" },
       { largura: "cheia", tamanho: "grande", class: "px-5" },
     ],
-    defaultVariants: {
-      variante: "principal",
-      tamanho: "padrao",
-      largura: "auto",
-    },
+    defaultVariants: { variante: "principal", tamanho: "padrao", largura: "auto" },
   },
 );
 

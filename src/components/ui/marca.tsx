@@ -22,16 +22,16 @@ export function Marca({ className, somenteSimbolo = false }: Props) {
         alt=""
         width={40}
         height={40}
-        className="size-9 shrink-0 rounded-full ring-1 ring-marca/30 sm:size-10"
+        className="size-9 shrink-0 rounded-full sm:size-10"
       />
       {somenteSimbolo ? (
         <span className="sr-only">{site.nome}</span>
       ) : (
         <span className="flex flex-col leading-none">
-          <span className="font-display text-base tracking-wide text-texto sm:text-lg">
+          <span className="font-display text-lg tracking-wide text-texto">
             {site.marca.linhaPrincipal}
           </span>
-          <span className="text-[0.62rem] font-medium tracking-[0.22em] text-marca uppercase sm:text-[0.68rem]">
+          <span className="text-[0.6rem] font-medium tracking-[0.22em] text-marca uppercase sm:text-[0.65rem]">
             {site.marca.linhaSecundaria}
           </span>
         </span>

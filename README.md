@@ -9,7 +9,7 @@ WhatsApp com a mensagem já digitada.
 ## Stack
 
 Next 16 (App Router) · React 19 · TypeScript estrito · Tailwind v4 (CSS-first) ·
-componentes do [Originkit](https://www.originkit.dev) · pnpm · deploy estático no Netlify.
+um componente do [Originkit](https://www.originkit.dev) · pnpm · deploy estático no Netlify.
 
 Sem shadcn/Radix: os primitivos de UI são próprios, sobre `cva` + `cn`.
 
@@ -98,10 +98,10 @@ antes de mexer no layout:
 - O HTML estático sai sempre no layout de celular. `use-media-query.ts` usa
   `useSyncExternalStore` com snapshot de servidor `false`, então quem decide o layout é
   o navegador no primeiro render.
-- **A galeria tem duas apresentações.** No desktop é o `spotlight-frames` do Originkit;
-  no celular, um trilho com scroll-snap. O componente do Originkit até se adapta sozinho
-  à largura, mas com 8 lâminas cada uma ficaria com ~21px no celular — menos da metade
-  de um alvo de toque decente. O `lazy` só carrega o chunk no desktop.
+- **A galeria é própria, sem biblioteca.** Duas colunas no celular, quatro no desktop,
+  com as fotos pares descendo 40px a partir de `lg`. O desencontro é de propósito: grade
+  perfeitamente alinhada parece catálogo. `self-start` nos itens impede a grade de esticar
+  o item não deslocado e deixar faixa vazia sob a foto. Zero JavaScript.
 - **O título do hero só anima no desktop**, pelo mesmo motivo: não vale ~70 KB de gsap
   num 4G. O texto puro é o que vai para o HTML (e é o que o buscador lê).
 - Botões não usam `whitespace-nowrap`: rótulo longo num botão nowrap vira a largura
@@ -110,13 +110,21 @@ antes de mexer no layout:
 
 ## Notas técnicas
 
-- **`src/components/originkit/` é código vendorizado.** O `spotlight-frames.tsx` carrega
-  um `@ts-nocheck` porque não foi escrito para o `noUncheckedIndexedAccess` deste
-  projeto. Preferimos isolar o arquivo a afrouxar o tsconfig do site. A pasta também está
-  no `ignores` do ESLint. **Se rodar `originkit add spotlight-frames` de novo, recoloque
-  o cabeçalho do `@ts-nocheck`.**
+- **`src/components/originkit/` é código vendorizado** e está no `ignores` do ESLint.
+  Hoje só tem o `text-emerge`, usado no título do hero. Se adicionar um componente que
+  não passe no `noUncheckedIndexedAccess`, ponha `@ts-nocheck` no topo do arquivo dele
+  em vez de afrouxar o tsconfig do site inteiro.
+- **O CLI do Originkit tem limite de 10 componentes por dia.** Estourou, só volta no dia
+  seguinte — e `originkit remove` não devolve a cota. Antes de remover um componente,
+  confira que o substituto já baixou.
 - `globals.css` tem `@source "../components/originkit"`. Sem isso o Tailwind v4 não varre
   a pasta vendorizada e as classes dos componentes somem no build.
+- **As cores foram amostradas das fotos dela, não escolhidas no olho.** As imagens do
+  espaço caem todas em marrom quente (`#190b03` nas sombras, `#825d3d` na madeira,
+  `#bb825c` na terracota, `#e5dacc` nas toalhas) e o fundo do logotipo é `#2e200b`. Daí
+  o site ser creme com marrom em vez do quase-preto com dourado que todo spa genérico usa.
+- `--color-marca-luz` (`#d2a17d`) existe só para texto pequeno sobre os fundos marrons: o
+  terracota da marca chega a 3,9:1 ali, abaixo do mínimo de 4,5:1 do WCAG AA.
 - O token de cor se chama `--color-fundo`, não `--color-base`: `base` colidiria com o
   utilitário `text-base` (tamanho de fonte) do Tailwind.
 - `pnpm-workspace.yaml` libera o build do `unrs-resolver` (usado pelo

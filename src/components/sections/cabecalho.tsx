@@ -22,7 +22,7 @@ export function Cabecalho() {
     };
   }, [aberto]);
 
-  // Fecha no Esc — teclado e leitor de tela contam tanto quanto o dedo.
+  // Fecha no Esc: teclado e leitor de tela contam tanto quanto o dedo.
   useEffect(() => {
     if (!aberto) return;
 
@@ -34,7 +34,7 @@ export function Cabecalho() {
   }, [aberto]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-linha bg-fundo/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-linha bg-fundo/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <a
           href="#topo"
@@ -88,7 +88,7 @@ export function Cabecalho() {
                   <a
                     href={item.href}
                     onClick={() => setAberto(false)}
-                    className="flex min-h-12 items-center border-b border-linha/60 text-base text-texto transition-colors hover:text-marca"
+                    className="flex min-h-12 items-center border-b border-linha/70 text-base text-texto transition-colors hover:text-marca"
                   >
                     {item.rotulo}
                   </a>

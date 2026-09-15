@@ -1,56 +1,52 @@
-import { Clock, Sparkles, Footprints } from "lucide-react";
 import { Secao, TituloSecao } from "@/components/ui/secao";
 import { Botao } from "@/components/ui/botao";
-import { massagens, escaldaPes, site } from "@/config/site";
+import { massagens, escaldaPes } from "@/config/site";
 import { formatarPreco, linkWhatsApp, mensagens } from "@/lib/whatsapp";
 
 /**
- * A linha corporal e o lancamento — por isso vem depois do head spa, que e o
- * que o publico ja conhece. Todos os valores aqui estao confirmados no material
- * da cliente, so o escalda-pes simples ficou em branco.
+ * Unica secao no marrom do logotipo. Alem de destacar a linha nova, quebra a
+ * sequencia de blocos claros iguais que faz uma pagina parecer gerada.
+ *
+ * Todos os valores aqui estao confirmados no material da cliente; so o
+ * escalda-pes simples ficou em branco.
  */
 export function BodyTherapy() {
   return (
-    <Secao id="body-therapy" clara>
+    <Secao id="body-therapy" tom="escuro">
       <TituloSecao
-        clara
+        escuro
         etiqueta="Brisa Body Therapy"
-        titulo="A linha corporal"
-        descricao="Criada para levar ao corpo o mesmo cuidado que o público já conhece do spa capilar. Cinco técnicas, cada uma para um estado diferente — do relaxamento profundo ao alívio de dor localizada."
+        titulo="Massagem corporal"
+        descricao="A linha foi criada para trazer ao corpo o mesmo cuidado que o público já conhece do spa capilar."
       />
 
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {massagens.map((massagem) => (
           <article
             key={massagem.id}
-            className="flex flex-col rounded-2xl border border-areia-linha bg-white/55 p-6"
+            className="flex flex-col rounded-[1.5rem] bg-escuro-2 p-6"
           >
-            <h3 className="font-display text-2xl text-areia-texto">{massagem.nome}</h3>
-            <p className="mt-1 text-sm text-marca-escuro">{massagem.subtitulo}</p>
+            <div className="flex items-baseline justify-between gap-3">
+              <h3 className="font-display text-2xl text-creme">{massagem.nome}</h3>
+              <span className="shrink-0 text-xs text-creme/55">{massagem.duracao}</span>
+            </div>
+            <p className="mt-1 text-sm text-marca-luz">{massagem.subtitulo}</p>
 
-            <p className="mt-2 inline-flex items-center gap-2 text-sm text-areia-texto/65">
-              <Clock className="size-4 shrink-0" aria-hidden />
-              {massagem.duracao}
-            </p>
+            <p className="mt-4 text-sm leading-relaxed text-creme/75">{massagem.descricao}</p>
 
-            <p className="mt-4 text-sm leading-relaxed text-areia-texto/80">
-              {massagem.descricao}
-            </p>
-
-            <p className="mt-4 border-t border-areia-linha pt-4 text-sm text-areia-texto/70">
-              <span className="font-medium text-areia-texto">Ideal para:</span>{" "}
-              {massagem.idealPara}
+            <p className="mt-4 text-sm text-creme/60">
+              <span className="text-creme/90">Ideal para:</span> {massagem.idealPara}
             </p>
 
             <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-6">
-              <p className="font-display text-2xl text-areia-texto">
+              <p className="font-display text-2xl text-creme">
                 {formatarPreco(massagem.preco)}
               </p>
               <Botao
                 href={linkWhatsApp(mensagens.massagem(massagem.nome))}
                 target="_blank"
                 rel="noopener noreferrer"
-                variante="claro"
+                variante="contornoClaro"
                 largura="cheia"
                 className="sm:w-auto"
               >
@@ -60,30 +56,28 @@ export function BodyTherapy() {
           </article>
         ))}
 
-        {/* Escalda-pes: ritual proprio, nao e massagem — por isso o card sai do
-            padrao dos outros cinco e ocupa a coluna que sobra. */}
-        <article className="flex flex-col rounded-2xl border border-areia-linha bg-marca-escuro p-6 text-areia">
-          <Footprints className="size-6 text-marca-claro" aria-hidden />
-          <h3 className="mt-4 font-display text-2xl">{escaldaPes.nome}</h3>
-          <p className="mt-3 text-sm leading-relaxed text-areia/80">{escaldaPes.chamada}</p>
+        {/* Escalda-pes nao e massagem: ritual proprio, tratamento proprio. */}
+        <article className="flex flex-col rounded-[1.5rem] bg-creme p-6 text-texto">
+          <h3 className="font-display text-2xl">{escaldaPes.nome}</h3>
+          <p className="mt-3 text-sm leading-relaxed text-suave">{escaldaPes.chamada}</p>
 
-          <ul className="mt-4 flex flex-col gap-2 border-t border-areia/15 pt-4">
-            {escaldaPes.etapas.map((etapa) => (
-              <li key={etapa} className="flex items-start gap-2 text-sm text-areia/85">
-                <Sparkles className="mt-0.5 size-3.5 shrink-0 text-marca-claro" aria-hidden />
-                <span className="leading-relaxed">{etapa}</span>
+          <ol className="mt-5 flex flex-col gap-2.5 border-t border-linha pt-5">
+            {escaldaPes.etapas.map((etapa, indice) => (
+              <li key={etapa} className="flex gap-3 text-sm leading-relaxed text-suave">
+                <span className="shrink-0 font-display text-texto">{indice + 1}</span>
+                <span>{etapa}</span>
               </li>
             ))}
-          </ul>
+          </ol>
 
-          <ul className="mt-5 flex flex-col gap-2">
+          <ul className="mt-5 flex flex-col gap-2 border-t border-linha pt-4">
             {escaldaPes.opcoes.map((opcao) => (
               <li
                 key={opcao.id}
                 className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 text-sm"
               >
-                <span className="text-areia/85">{opcao.nome}</span>
-                <span className="font-medium text-marca-claro">
+                <span className="text-suave">{opcao.nome}</span>
+                <span className="font-medium text-texto">
                   {opcao.preco === null ? "sob consulta" : formatarPreco(opcao.preco)}
                 </span>
               </li>
@@ -103,9 +97,9 @@ export function BodyTherapy() {
         </article>
       </div>
 
-      <p className="mt-8 text-sm text-areia-texto/65">
-        Dá para combinar a terapia capilar com uma massagem no mesmo dia — chame no WhatsApp que
-        a gente monta o horário. Atendimento em {site.local.bairro}, com hora marcada.
+      <p className="mt-8 max-w-xl text-sm text-creme/65">
+        Dá para juntar a terapia capilar com uma massagem no mesmo dia. Chama a gente no
+        WhatsApp que montamos o horário.
       </p>
     </Secao>
   );

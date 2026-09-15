@@ -12,17 +12,10 @@ import { linkWhatsApp, mensagens } from "@/lib/whatsapp";
  */
 export function Hero() {
   return (
-    <section id="topo" className="relative overflow-hidden border-b border-linha">
-      <div className="fundo-pontos absolute inset-0 opacity-60" aria-hidden />
-      {/* Brilho quente atras do texto, na cor do latao do espaco. */}
-      <div
-        className="absolute -top-32 -left-32 size-96 rounded-full bg-marca/10 blur-3xl"
-        aria-hidden
-      />
-
-      <div className="relative mx-auto grid w-full max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14 lg:py-28">
+    <section id="topo" className="border-b border-linha">
+      <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16 lg:py-24">
         <div>
-          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-marca/25 bg-marca/5 px-3 py-1.5 text-[0.7rem] font-medium tracking-[0.14em] text-marca uppercase sm:text-xs">
+          <p className="mb-5 text-xs font-medium tracking-[0.18em] text-marca uppercase">
             {site.descricaoCurta}
           </p>
 
@@ -31,8 +24,8 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-pretty text-suave sm:text-lg">
-            Terapia capilar e massagem corporal em {site.local.bairro}, com hora marcada e
-            atendimento individual. Você deita, fecha os olhos, e a próxima hora é só sua.
+            Head spa e massagem em {site.local.bairro}, no {site.local.referencia}. A gente
+            atende uma cliente por vez, com hora marcada.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -53,7 +46,7 @@ export function Hero() {
               largura="cheia"
               className="sm:w-auto"
             >
-              Ver os rituais
+              Ver os serviços
             </Botao>
           </div>
 
@@ -66,13 +59,13 @@ export function Hero() {
             <IconeInstagram className="size-4 shrink-0" />
             <span>
               <strong className="font-medium text-texto">{site.provaSocial.seguidores}</strong>{" "}
-              seguidores acompanham o dia a dia do espaço
+              seguidores no Instagram
             </span>
           </a>
         </div>
 
-        <div className="relative">
-          <div className="overflow-hidden rounded-2xl border border-linha bg-superficie">
+        <div>
+          <div className="overflow-hidden rounded-[1.75rem] bg-superficie-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={fotoHero.src}
@@ -80,12 +73,9 @@ export function Hero() {
               width={360}
               height={640}
               fetchPriority="high"
-              className="h-64 w-full object-cover object-center sm:h-80 lg:h-[30rem]"
+              className="h-72 w-full object-cover object-center sm:h-96 lg:h-[32rem]"
             />
           </div>
-          <p className="mt-3 text-center text-xs text-suave lg:text-left">
-            {site.local.referencia} — {site.local.bairro}, {site.local.cidade}/{site.local.uf}
-          </p>
         </div>
       </div>
     </section>

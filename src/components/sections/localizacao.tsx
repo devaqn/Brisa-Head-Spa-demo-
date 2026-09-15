@@ -1,5 +1,4 @@
-import { MapPin, CalendarClock, CreditCard } from "lucide-react";
-import { Secao, TituloSecao } from "@/components/ui/secao";
+import { Secao } from "@/components/ui/secao";
 import { Botao } from "@/components/ui/botao";
 import { site } from "@/config/site";
 import { linkWhatsApp, mensagens } from "@/lib/whatsapp";
@@ -12,51 +11,41 @@ export function Localizacao() {
   const { local, atendimento } = site;
 
   return (
-    <Secao id="localizacao">
-      <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-14">
+    <Secao id="localizacao" tom="branco">
+      <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
         <div>
-          <TituloSecao
-            etiqueta="Onde fica"
-            titulo={`${local.bairro}, ${local.cidade}`}
-            descricao={`${local.referencia}. Atendimento com hora marcada, uma cliente por vez.`}
-          />
+          <p className="mb-3 text-xs font-medium tracking-[0.18em] text-marca uppercase">
+            Onde a gente fica
+          </p>
+          <h2 className="font-display text-3xl leading-tight text-balance sm:text-4xl">
+            {local.bairro}, {local.cidade}
+          </h2>
 
-          <dl className="mt-8 flex flex-col gap-5">
-            <div className="flex items-start gap-3">
-              <MapPin className="mt-0.5 size-5 shrink-0 text-marca" aria-hidden />
-              <div>
-                <dt className="text-sm font-medium text-texto">Endereço</dt>
-                <dd className="mt-0.5 text-sm text-suave">
-                  {local.enderecoCompleto ?? (
-                    <>
-                      {local.referencia} — {local.bairro}, {local.cidade}/{local.uf}. Confirme o
-                      endereço completo no WhatsApp antes de sair de casa.
-                    </>
-                  )}
-                </dd>
-              </div>
+          <dl className="mt-8 flex flex-col gap-6">
+            <div>
+              <dt className="text-sm font-medium text-texto">Endereço</dt>
+              <dd className="mt-1 text-sm leading-relaxed text-suave">
+                {local.enderecoCompleto ?? (
+                  <>
+                    {local.referencia}, em {local.bairro}. Confirme a sala no WhatsApp antes de
+                    sair de casa.
+                  </>
+                )}
+              </dd>
             </div>
 
-            <div className="flex items-start gap-3">
-              <CalendarClock className="mt-0.5 size-5 shrink-0 text-marca" aria-hidden />
-              <div>
-                <dt className="text-sm font-medium text-texto">Horários</dt>
-                <dd className="mt-0.5 text-sm text-suave">
-                  {atendimento.horario ??
-                    "Atendimento com hora marcada. Chame no WhatsApp para ver as datas disponíveis."}
-                </dd>
-              </div>
+            <div>
+              <dt className="text-sm font-medium text-texto">Horários</dt>
+              <dd className="mt-1 text-sm leading-relaxed text-suave">
+                {atendimento.horario ??
+                  "Atendimento com hora marcada. Chama no WhatsApp para ver as datas."}
+              </dd>
             </div>
 
             {atendimento.pagamento ? (
-              <div className="flex items-start gap-3">
-                <CreditCard className="mt-0.5 size-5 shrink-0 text-marca" aria-hidden />
-                <div>
-                  <dt className="text-sm font-medium text-texto">Pagamento</dt>
-                  <dd className="mt-0.5 text-sm text-suave">
-                    {atendimento.pagamento.join(", ")}
-                  </dd>
-                </div>
+              <div>
+                <dt className="text-sm font-medium text-texto">Pagamento</dt>
+                <dd className="mt-1 text-sm text-suave">{atendimento.pagamento.join(", ")}</dd>
               </div>
             ) : null}
           </dl>
@@ -86,7 +75,7 @@ export function Localizacao() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border border-linha bg-superficie">
+        <div className="overflow-hidden rounded-[1.75rem] bg-superficie-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/fotos/espaco-06.webp"
@@ -94,7 +83,7 @@ export function Localizacao() {
             width={480}
             height={640}
             loading="lazy"
-            className="h-72 w-full object-cover sm:h-96 lg:h-[26rem]"
+            className="h-72 w-full object-cover sm:h-96 lg:h-[28rem]"
           />
         </div>
       </div>

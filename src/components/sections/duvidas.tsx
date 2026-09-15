@@ -1,6 +1,5 @@
-import { ChevronDown } from "lucide-react";
-import { Secao, TituloSecao } from "@/components/ui/secao";
-import { Botao } from "@/components/ui/botao";
+import { Plus } from "lucide-react";
+import { Secao } from "@/components/ui/secao";
 import { faq } from "@/config/site";
 import { linkWhatsApp, mensagens } from "@/lib/whatsapp";
 
@@ -11,48 +10,38 @@ import { linkWhatsApp, mensagens } from "@/lib/whatsapp";
 export function Duvidas() {
   return (
     <Secao id="duvidas">
-      <TituloSecao
-        etiqueta="Dúvidas"
-        titulo="Antes de marcar"
-        centralizado
-      />
+      <div className="mx-auto max-w-3xl">
+        <h2 className="font-display text-3xl leading-tight sm:text-4xl">Antes de marcar</h2>
 
-      <div className="mx-auto mt-12 max-w-3xl">
-        <ul className="flex flex-col gap-3">
+        <ul className="mt-8 flex flex-col">
           {faq.map((item) => (
             <li key={item.pergunta}>
-              <details className="group rounded-2xl border border-linha bg-superficie open:border-marca/30">
-                <summary className="flex min-h-14 list-none items-center justify-between gap-4 p-5 text-left">
+              <details className="group border-b border-linha">
+                <summary className="flex min-h-14 list-none items-center justify-between gap-4 py-4 text-left">
                   <span className="text-base font-medium text-texto">{item.pergunta}</span>
-                  <ChevronDown
-                    className="size-5 shrink-0 text-marca transition-transform duration-200 group-open:rotate-180"
+                  <Plus
+                    className="size-4 shrink-0 text-marca transition-transform duration-200 group-open:rotate-45"
                     aria-hidden
                   />
                 </summary>
-                <p className="px-5 pb-5 text-sm leading-relaxed text-suave">{item.resposta}</p>
+                <p className="pb-5 text-sm leading-relaxed text-suave">{item.resposta}</p>
               </details>
             </li>
           ))}
         </ul>
 
-        <div className="mt-8 rounded-2xl border border-linha bg-superficie p-6 text-center sm:p-8">
-          <p className="text-base text-texto">Ficou alguma pergunta de fora?</p>
-          <p className="mt-2 text-sm text-suave">
-            Manda mensagem que a gente responde — sem compromisso de marcar nada.
-          </p>
-          <div className="mt-6 flex justify-center">
-            <Botao
-              href={linkWhatsApp(mensagens.duvida)}
-              target="_blank"
-              rel="noopener noreferrer"
-              variante="contorno"
-              largura="cheia"
-              className="sm:w-auto"
-            >
-              Tirar dúvida no WhatsApp
-            </Botao>
-          </div>
-        </div>
+        <p className="mt-8 text-sm text-suave">
+          Ficou alguma pergunta de fora?{" "}
+          <a
+            href={linkWhatsApp(mensagens.duvida)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-marca underline underline-offset-4 transition-colors hover:text-texto"
+          >
+            Manda mensagem
+          </a>{" "}
+          que a gente responde, sem compromisso de marcar nada.
+        </p>
       </div>
     </Secao>
   );

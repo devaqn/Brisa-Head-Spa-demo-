@@ -8,29 +8,29 @@
   --font-sans: var(--fonte-corpo), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--fonte-titulo), Georgia, "Times New Roman", serif;
 
-  /* Paleta tirada do material da cliente: o logotipo e um perfil dourado sobre
-     marrom escuro (#2c1c06 a #8f793d na amostra), e a media das fotos do espaco
-     cai em marrom quente e terracota. Nada de verde-spa generico: o lugar dela
-     e madeira, latao e luz baixa. */
-  --color-fundo: #0c0907;
-  --color-superficie: #14100c;
-  --color-superficie-2: #1c1713;
-  --color-linha: #2b231c;
-  --color-texto: #f5f1ea;
-  --color-suave: #b0a394;
+  /* Cores amostradas das fotos do espaco dela e do logotipo, nao escolhidas
+     no olho. As fotos caem todas em marrom quente: #190b03 nas sombras,
+     #825d3d na madeira, #bb825c na terracota da bandeja, #e5dacc nas toalhas.
+     O fundo do logo e #2e200b. Por isso o site e creme com marrom, e nao o
+     quase-preto com dourado que qualquer spa gerico usaria. */
+  --color-fundo: #faf5ee;
+  --color-superficie: #ffffff;
+  --color-superficie-2: #f2e9dc;
+  --color-linha: #e2d6c4;
+  --color-texto: #2f1b08;
+  --color-suave: #6b5340;
 
-  /* Dourado do logo, clareado o suficiente para passar contraste sobre o
-     fundo escuro — o #8f793d original fica ilegivel como texto. */
-  --color-marca: #c9a55f;
-  --color-marca-claro: #e3c98d;
-  --color-marca-escuro: #3b2a11;
+  --color-marca: #8a5f3c;
+  --color-marca-clara: #bb825c;
+  /* Terracota clareado. O #bb825c da marca so alcanca 3.9:1 em texto pequeno
+     sobre o marrom do logotipo, abaixo do minimo de 4.5:1 do WCAG AA; este
+     chega a 5.7:1. Usado so nas secoes de fundo escuro. */
+  --color-marca-luz: #d2a17d;
 
-  /* Terracota: media real das fotos da bandeja e da madeira. */
-  --color-terracota: #c77f50;
-  /* Superficie clara, cor das toalhas — usada para arejar as secoes. */
-  --color-areia: #ece4d7;
-  --color-areia-linha: #d8cbb8;
-  --color-areia-texto: #2b231c;
+  /* Marrom do logotipo, usado nas secoes que quebram o ritmo claro. */
+  --color-escuro: #2e200b;
+  --color-escuro-2: #412f15;
+  --color-creme: #e5dacc;
 }
 
 @layer base {
@@ -50,7 +50,7 @@
   }
 
   ::selection {
-    background-color: var(--color-marca);
+    background-color: var(--color-marca-clara);
     color: var(--color-fundo);
   }
 
@@ -73,27 +73,6 @@
     max-width: 100%;
     height: auto;
   }
-}
-
-/* Textura discreta: pontos quase invisiveis que dao profundidade ao fundo
-   escuro sem virar padrao chamativo. */
-@utility fundo-pontos {
-  background-image: radial-gradient(
-    circle at 1px 1px,
-    color-mix(in oklab, var(--color-marca) 9%, transparent) 1px,
-    transparent 0
-  );
-  background-size: 28px 28px;
-}
-
-/* Fio dourado usado como separador entre secoes. */
-@utility fio-marca {
-  background-image: linear-gradient(
-    to right,
-    transparent,
-    color-mix(in oklab, var(--color-marca) 55%, transparent),
-    transparent
-  );
 }
 
 /* Um site que vende desaceleracao nao pode ignorar quem pediu menos

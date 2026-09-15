@@ -1,33 +1,27 @@
 import { Botao } from "@/components/ui/botao";
 import { linkWhatsApp, mensagens } from "@/lib/whatsapp";
 
-/** Respiro de conversao no meio da pagina, para quem ja se convenceu. */
+/** Respiro de conversao no meio da pagina, curto de proposito. */
 export function FaixaCta() {
   return (
-    <section className="relative overflow-hidden border-y border-linha bg-superficie">
-      <div
-        className="absolute top-1/2 left-1/2 size-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-marca/10 blur-3xl"
-        aria-hidden
-      />
-      <div className="relative mx-auto w-full max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-20">
-        <h2 className="font-display text-3xl leading-tight text-balance sm:text-4xl">
-          O corpo avisa quando precisa parar.
+    <section className="bg-superficie-2">
+      <div className="mx-auto flex w-full max-w-4xl flex-col items-center gap-6 px-4 py-14 text-center sm:px-6 sm:py-16">
+        <h2 className="font-display text-2xl leading-tight text-balance sm:text-3xl">
+          Quer marcar?
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-pretty text-suave">
-          Escolha o horário que cabe na sua semana. A gente cuida do resto.
+        <p className="max-w-md text-base text-pretty text-suave">
+          Chama a gente no WhatsApp que vemos o melhor dia para você.
         </p>
-        <div className="mt-8 flex justify-center">
-          <Botao
-            href={linkWhatsApp(mensagens.agendar)}
-            target="_blank"
-            rel="noopener noreferrer"
-            tamanho="grande"
-            largura="cheia"
-            className="sm:w-auto"
-          >
-            Marcar no WhatsApp
-          </Botao>
-        </div>
+        <Botao
+          href={linkWhatsApp(mensagens.agendar)}
+          target="_blank"
+          rel="noopener noreferrer"
+          tamanho="grande"
+          largura="cheia"
+          className="sm:w-auto"
+        >
+          Falar no WhatsApp
+        </Botao>
       </div>
     </section>
   );

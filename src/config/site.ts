@@ -6,6 +6,10 @@
  * O que nao esta confirmado fica `null` ou marcado com TODO(cliente) — campo
  * `null` nao e renderizado, entao o site nunca inventa informacao. A lista
  * completa do que falta esta em BRIEFING.md.
+ *
+ * Sobre o tom: onde ela ja escreveu alguma coisa, e a palavra dela que vale.
+ * O resto foi escrito como ela fala nas legendas e no WhatsApp, com "a gente"
+ * no lugar de "nos" e frase curta. Nada de bordao de agencia.
  */
 
 /**
@@ -16,22 +20,17 @@ export const MODO_DEMONSTRACAO: boolean = true;
 
 export const site = {
   nome: "Brisa Head Spa",
-  /** O logo separa as duas palavras em linhas — mesma hierarquia da arte dela. */
   marca: {
     linhaPrincipal: "Brisa",
     linhaSecundaria: "Head Spa",
   },
-  /**
-   * Bio do Instagram, palavra por palavra. E a promessa que o site inteiro
-   * repete: nao e salao, e refugio.
-   */
+  /** Bio do Instagram, palavra por palavra. */
   bordao: "Um refúgio para desacelerar corpo e mente",
   descricaoCurta: "Primeiro Head Spa em Candeias",
-  /** Assinatura da linha corporal, tirada da abertura do Canva. */
+  /** Abertura do material da linha corporal, no Canva. */
   bordaoCorpo: "O toque que renova corpo e alma",
 
-  // TODO(cliente): trocar pelo dominio real quando comprar.
-  url: "https://brisaheadspa.netlify.app",
+  url: "https://brisaheadspademo.netlify.app",
 
   contato: {
     whatsapp: "5581991494187",
@@ -47,18 +46,15 @@ export const site = {
   provaSocial: {
     seguidores: "9.435",
     publicacoes: "76",
-    /** O destaque "Feedbacks" fica fixado no perfil dela. */
     temDestaqueFeedbacks: true,
   },
 
   local: {
-    /** Da bio: "Primeiro Head Spa em Candeias" + "Empresarial Soares de Souza". */
     bairro: "Candeias",
     cidade: "Jaboatão dos Guararapes",
     uf: "PE",
     regiaoCurta: "Candeias, Jaboatão",
     regiaoLonga: "Candeias, Jaboatão dos Guararapes e Região Metropolitana do Recife",
-    /** Confirmado na bio do perfil. */
     referencia: "Empresarial Soares de Souza",
     /** TODO(cliente): numero da sala e endereco completo com CEP. */
     enderecoCompleto: null as string | null,
@@ -69,11 +65,10 @@ export const site = {
   atendimento: {
     /** TODO(cliente): dias e horarios de funcionamento. */
     horario: null as string | null,
-    /** Todo o material fala em experiencia reservada, uma cliente por vez. */
     horaMarcada: true,
     /** TODO(cliente): formas de pagamento aceitas. */
     pagamento: null as readonly string[] | null,
-    /** TODO(cliente): nome da profissional ("nossa profissional exclusiva"). */
+    /** TODO(cliente): nome da profissional. */
     profissional: null as string | null,
   },
 
@@ -86,7 +81,7 @@ export const site = {
 } as const;
 
 /* ------------------------------------------------------------------ *
- * Terapia capilar — o servico ancora da marca                         *
+ * Terapia capilar                                                      *
  * ------------------------------------------------------------------ */
 
 export type Pacote = {
@@ -95,24 +90,18 @@ export type Pacote = {
   readonly subtitulo: string;
   readonly resumo: string;
   readonly etapas: readonly string[];
-  /** TODO(cliente): nenhum dos dois pacotes tem valor no material. */
   readonly preco: number | null;
   readonly duracao: string | null;
   readonly destaque: boolean;
 };
 
-/**
- * Copiado do Canva da dona, etapa por etapa. Os dois pacotes estao sem preco
- * no material original — por isso `preco: null`, e o card mostra o botao de
- * WhatsApp no lugar do valor.
- */
+/** Etapas copiadas do Canva, uma a uma. Os dois pacotes estao sem valor la. */
 export const pacotesCapilar: readonly Pacote[] = [
   {
     id: "essencial",
     nome: "Brisa Essencial",
     subtitulo: "Terapia capilar",
-    resumo:
-      "O ritual completo de cuidado com os fios e o couro cabeludo, com massagem que desce do topo da cabeça até os ombros.",
+    resumo: "O ritual completo, da lavagem até a massagem nos ombros e braços.",
     etapas: [
       "Terapia capilar com lavagem específica",
       "Hidratação profunda",
@@ -123,7 +112,7 @@ export const pacotesCapilar: readonly Pacote[] = [
       "Massagem no pescoço",
     ],
     preco: null,
-    // TODO(cliente): o Canva traz "Duração: I:h", provavelmente 1h.
+    // TODO(cliente): o Canva traz "Duracao: I:h", provavelmente 1h.
     duracao: null,
     destaque: false,
   },
@@ -131,8 +120,7 @@ export const pacotesCapilar: readonly Pacote[] = [
     id: "premium",
     nome: "Brisa Premium",
     subtitulo: "Terapia capilar completa",
-    resumo:
-      "A versão mais longa do ritual: entra o detox capilar e a massagem se estende até as mãos.",
+    resumo: "Entra o detox capilar, e a massagem vai até as mãos.",
     etapas: [
       "Lavagem específica e personalizada",
       "Detox capilar",
@@ -145,14 +133,14 @@ export const pacotesCapilar: readonly Pacote[] = [
       "Massagem nos braços e mãos",
     ],
     preco: null,
-    // TODO(cliente): duração não informada no material.
+    // TODO(cliente): duracao nao informada no material.
     duracao: null,
     destaque: true,
   },
 ];
 
 /* ------------------------------------------------------------------ *
- * Brisa Body Therapy — a linha corporal                               *
+ * Brisa Body Therapy                                                   *
  * ------------------------------------------------------------------ */
 
 export type Massagem = {
@@ -166,8 +154,8 @@ export type Massagem = {
 };
 
 /**
- * Texto integral do Canva. Só corrigi erros de digitação do original
- * ("proffisonal", espaçamento de "Brisaa Recovery–") — nada de conteúdo.
+ * Texto do Canva. So corrigi erro de digitacao do original ("proffisonal",
+ * espacamento de "Brisaa Recovery–") e cortei repeticao. Nada de conteudo.
  */
 export const massagens: readonly Massagem[] = [
   {
@@ -175,7 +163,7 @@ export const massagens: readonly Massagem[] = [
     nome: "Brisa Calm",
     subtitulo: "Massagem relaxante sensorial",
     descricao:
-      "Toques leves e envolventes que dissolvem o estresse e acalmam a mente. A técnica é aplicada com movimentos ritmados e suaves, promovendo relaxamento profundo e melhorando a circulação. Durante a sessão, aromas calmantes e sons harmônicos completam a experiência, conduzindo você a um estado de serenidade e descanso total.",
+      "Toques leves e envolventes que dissolvem o estresse e acalmam a mente. A técnica é aplicada com movimentos ritmados e suaves, promovendo relaxamento profundo e melhorando a circulação. Durante a sessão, aromas calmantes e sons harmônicos completam a experiência.",
     idealPara: "Quem busca desacelerar e sentir o corpo mais leve.",
     preco: 149.99,
     duracao: "40 a 50 min",
@@ -185,7 +173,7 @@ export const massagens: readonly Massagem[] = [
     nome: "Brisa Aroma",
     subtitulo: "Massagem com aromaterapia",
     descricao:
-      "Uma massagem sensorial que une técnica e essência. Óleos vegetais e óleos essenciais são personalizados conforme o estado emocional e físico da cliente — relaxante, revigorante ou equilibrante. Os aromas atuam no sistema nervoso, acalmando, energizando ou restaurando o ânimo.",
+      "Une técnica e essência. Os óleos vegetais e essenciais são escolhidos conforme o estado emocional e físico da cliente: relaxante, revigorante ou equilibrante. Os aromas atuam no sistema nervoso, acalmando, energizando ou restaurando o ânimo.",
     idealPara: "Quem busca equilíbrio emocional, leveza e bem-estar integral.",
     preco: 129.99,
     duracao: "40 min",
@@ -195,7 +183,7 @@ export const massagens: readonly Massagem[] = [
     nome: "Brisa Stones",
     subtitulo: "Massagem com pedras quentes",
     descricao:
-      "O calor das pedras vulcânicas penetra profundamente na musculatura, liberando tensões acumuladas e proporcionando uma sensação imediata de conforto e equilíbrio. A terapeuta alterna o toque das mãos com o deslizamento das pedras aquecidas, estimulando o fluxo energético e aliviando dores musculares — com aromas escolhidos para cada cliente e sua necessidade.",
+      "O calor das pedras vulcânicas penetra fundo na musculatura e libera tensão acumulada. A terapeuta alterna o toque das mãos com o deslizamento das pedras aquecidas, estimulando o fluxo energético e aliviando dores musculares, com aroma escolhido para cada cliente.",
     idealPara: "Dias frios, pós-treino ou quando o corpo pede aconchego e calor.",
     preco: 169.99,
     duracao: "50 a 60 min",
@@ -205,9 +193,9 @@ export const massagens: readonly Massagem[] = [
     nome: "Brisa Recovery",
     subtitulo: "Massagem desportiva",
     descricao:
-      "Focada em alongamentos e manobras firmes, essa técnica atua sobre músculos e articulações, reduzindo tensões e prevenindo lesões. Apesar de mais intensa, é feita de forma controlada e respeitosa ao limite do corpo, promovendo uma recuperação eficiente e sensação de vitalidade.",
+      "Focada em alongamento e manobras firmes, atua sobre músculos e articulações, reduzindo tensão e prevenindo lesão. É mais intensa, mas feita de forma controlada e respeitando o limite do corpo.",
     idealPara:
-      "Mulheres ativas, praticantes de atividade física ou que sofrem de dores por esforço repetitivo.",
+      "Mulheres ativas, praticantes de atividade física ou que sofrem com dor por esforço repetitivo.",
     preco: 149.99,
     duracao: "45 min",
   },
@@ -216,28 +204,23 @@ export const massagens: readonly Massagem[] = [
     nome: "Brisa Relief",
     subtitulo: "Massagem terapêutica em dores específicas",
     descricao:
-      "Técnica voltada para aliviar dores localizadas — como tensão cervical, lombar e outras partes do corpo. A profissional aplica manobras precisas, com pressão direcionada, óleos anti-inflamatórios naturais e estímulos musculares que promovem conforto imediato.",
-    idealPara: "Quem sofre com dores constantes e precisa de alívio e leveza.",
+      "Voltada para aliviar dor localizada, como tensão cervical e lombar. A profissional aplica manobras precisas, com pressão direcionada, óleos anti-inflamatórios naturais e estímulos musculares que trazem conforto na hora.",
+    idealPara: "Quem convive com dor constante e precisa de alívio.",
     preco: 169.99,
     duracao: "60 min",
   },
 ];
 
-/* ------------------------------------------------------------------ *
- * Escalda-pes                                                         *
- * ------------------------------------------------------------------ */
-
 export const escaldaPes = {
-  nome: "Escalda-pés relaxante",
+  nome: "Escalda-pés",
   chamada:
-    "Chegar cansada, colocar os pés numa água quentinha com sais, ervas e óleos essenciais. O aroma toma conta do ambiente e, aos poucos, a tensão do dia vai embora.",
+    "Chegar cansada e colocar os pés numa água quentinha com sais, ervas e óleos essenciais. O aroma vai tomando conta do ambiente e a tensão do dia vai embora junto.",
   etapas: [
-    "Imersão em água morna com sais minerais e ervas aromáticas — lavanda, camomila e alecrim.",
-    "Esfoliação suave para remover células mortas e ativar a circulação.",
-    "Massagem relaxante nos pés e pernas, com creme hidratante e óleos essenciais.",
+    "Imersão em água morna com sais minerais e ervas aromáticas: lavanda, camomila e alecrim.",
+    "Esfoliação suave, que tira as células mortas e ativa a circulação.",
+    "Massagem nos pés e pernas, com creme hidratante e óleos essenciais.",
   ],
-  idealPara:
-    "Quem passa o dia em pé, sente inchaço nas pernas ou quer simplesmente desligar por um tempo.",
+  idealPara: "Quem passa o dia em pé, sente as pernas inchadas ou só quer desligar um pouco.",
   opcoes: [
     {
       id: "escalda-simples",
@@ -247,54 +230,31 @@ export const escaldaPes = {
     },
     {
       id: "escalda-reflexologia",
-      nome: "Escalda-pés + reflexologia podal",
+      nome: "Com reflexologia podal",
       preco: 129.99 as number | null,
     },
   ],
 } as const;
 
 /* ------------------------------------------------------------------ *
- * A experiencia — o que a cliente encontra no espaco                   *
+ * O espaco                                                             *
  * ------------------------------------------------------------------ */
 
 /**
- * Da abertura do Canva: "Ambiente climatizado, aromas suaves, musica
- * envolvente e a presenca acolhedora da nossa profissional exclusiva".
- * Cada item vira um pilar da secao de experiencia.
+ * Os quatro itens sao a frase de abertura do Canva, quebrada: "Ambiente
+ * climatizado, aromas suaves, musica envolvente e a presenca acolhedora da
+ * nossa profissional exclusiva". Ficam como lista simples, nao como card com
+ * icone — quatro cards identicos e o layout mais generico que existe.
  */
 export const pilares = [
-  {
-    id: "ambiente",
-    titulo: "Ambiente climatizado",
-    descricao:
-      "Um espaço pensado para o corpo baixar a guarda: temperatura agradável, luz suave e silêncio.",
-    icone: "ambiente",
-  },
-  {
-    id: "aromas",
-    titulo: "Aromas suaves",
-    descricao:
-      "Óleos essenciais escolhidos para cada cliente. O cheiro é a primeira coisa que desacelera.",
-    icone: "aroma",
-  },
-  {
-    id: "musica",
-    titulo: "Música envolvente",
-    descricao:
-      "Trilha baixa e contínua, do começo ao fim do ritual, para a mente não voltar para a lista de tarefas.",
-    icone: "musica",
-  },
-  {
-    id: "profissional",
-    titulo: "Profissional exclusiva",
-    descricao:
-      "Uma cliente por vez, com hora marcada. Todo o atendimento é dedicado só a você.",
-    icone: "profissional",
-  },
+  { id: "ambiente", titulo: "Ambiente climatizado", nota: "temperatura boa e luz baixa" },
+  { id: "aromas", titulo: "Aromas suaves", nota: "óleo essencial escolhido na hora" },
+  { id: "musica", titulo: "Música envolvente", nota: "baixinha, do começo ao fim" },
+  { id: "profissional", titulo: "Profissional exclusiva", nota: "uma cliente por vez" },
 ] as const;
 
 /* ------------------------------------------------------------------ *
- * Galeria — fotos do proprio perfil                                    *
+ * Galeria                                                              *
  * ------------------------------------------------------------------ */
 
 export type Foto = {
@@ -304,7 +264,7 @@ export type Foto = {
 
 /**
  * Fotos do @brisaheadspa, otimizadas por scripts/otimizar-fotos.mjs.
- * Ordem pensada para alternar rosto, detalhe e ambiente — sem duas imagens
+ * Ordem pensada para alternar rosto, detalhe e ambiente, sem duas imagens
  * parecidas coladas uma na outra.
  */
 export const galeria: readonly Foto[] = [
@@ -318,32 +278,35 @@ export const galeria: readonly Foto[] = [
   { src: "/fotos/espaco-01.webp", alt: "Terapia capilar em andamento, com máscara de jade e luz baixa" },
 ];
 
-/** Foto usada como apoio do hero — detalhe da água, sem rosto. */
+/** Foto de apoio do hero. */
 export const fotoHero: Foto = {
   src: "/fotos/espaco-10.webp",
   alt: "Leque de água caindo sobre a pedra da cuba do head spa",
 };
 
+/** Foto da secao sobre o espaco. */
+export const fotoEspaco: Foto = {
+  src: "/fotos/espaco-09.webp",
+  alt: "Bandeja com jarra de cerâmica e tigela de cobre, preparada para o atendimento",
+};
+
 /* ------------------------------------------------------------------ *
- * Presente — vem dos destaques "melhorpresente" e "Noivas" do perfil   *
+ * Presente                                                             *
  * ------------------------------------------------------------------ */
 
-/**
- * O perfil tem dois destaques fixados sobre isso, entao o assunto existe.
- * O conteudo exato de cada pacote nao: TODO(cliente) em BRIEFING.md.
- */
+/** O perfil tem dois destaques fixados sobre isso, entao o assunto ja existe. */
 export const presentes = [
   {
     id: "vale-presente",
     titulo: "Vale-presente",
     descricao:
-      "Aniversário, Dia das Mães, agradecimento. Em vez de mais um objeto, uma hora de descanso de verdade.",
+      "A gente combina por mensagem e você escolhe o serviço. Quem ganhou marca no dia que puder.",
   },
   {
     id: "noivas",
     titulo: "Noivas",
     descricao:
-      "Um momento de calma antes do dia mais corrido da vida. Fale com a gente para montar o ritual junto.",
+      "Um tempo de calma antes do dia mais corrido da vida. Chama a gente que a gente monta junto.",
   },
 ] as const;
 
@@ -356,42 +319,41 @@ export const faq = [
   {
     pergunta: "O que é um head spa?",
     resposta:
-      "É uma terapia capilar que junta limpeza profunda do couro cabeludo com massagem sensorial. Você deita, recebe a lavagem e a hidratação dos fios, e a massagem sobe da cabeça para o rosto, pescoço e ombros. O resultado é cabelo limpo e leve, mas o que a maioria vem buscar mesmo é o relaxamento.",
+      "É uma terapia capilar feita deitada. Junta a limpeza profunda do couro cabeludo com massagem, que começa na cabeça e vai descendo para o rosto, o pescoço e os ombros. O cabelo sai limpo e leve, mas quem vem uma vez costuma voltar pelo relaxamento.",
   },
   {
     pergunta: "Preciso marcar antes?",
     resposta:
-      "Sim. O atendimento é individual, uma cliente por vez, então o horário é reservado só para você. Chame no WhatsApp para ver as datas disponíveis.",
+      "Precisa. A gente atende uma cliente por vez, então o horário fica reservado só para você.",
   },
   {
-    // TODO(cliente): confirmar se serve para cabelo com química, tintura e alongamento.
+    // TODO(cliente): confirmar se serve para cabelo com quimica, tintura e alongamento.
     pergunta: "Serve para qualquer tipo de cabelo?",
     resposta:
-      "A lavagem e a hidratação são personalizadas para cada tipo de fio. Se você tem química, coloração ou alongamento, comente no WhatsApp antes de marcar para a gente ajustar o ritual.",
+      "A lavagem e a hidratação são escolhidas para o seu tipo de fio. Se você tem química, coloração ou alongamento, comenta com a gente antes de marcar que a gente ajusta o ritual.",
   },
   {
     pergunta: "Qual a diferença entre o Essencial e o Premium?",
     resposta:
-      "O Essencial já traz o ritual completo de terapia capilar com massagem no rosto, pescoço, ombros e braços. O Premium acrescenta o detox capilar, a limpeza profunda do couro cabeludo e estende a massagem até as mãos.",
+      "O Essencial já é o ritual completo, com massagem no rosto, pescoço, ombros e braços. O Premium entra com detox capilar, limpeza profunda do couro cabeludo, e a massagem vai até as mãos.",
   },
   {
     pergunta: "A massagem corporal é a mesma coisa que o head spa?",
     resposta:
-      "Não. O head spa é a terapia capilar, feita na cabeça. A linha Brisa Body Therapy é a linha corporal, com massagem relaxante, aromaterapia, pedras quentes, desportiva e terapêutica. Dá para combinar as duas no mesmo dia.",
+      "Não. O head spa é na cabeça. A linha Brisa Body Therapy é no corpo: relaxante, aromaterapia, pedras quentes, desportiva e terapêutica. Dá para fazer as duas no mesmo dia.",
   },
   {
     // TODO(cliente): confirmar formas de pagamento.
     pergunta: "Quais as formas de pagamento?",
-    resposta:
-      "Combinamos no momento da reserva. Chame no WhatsApp para confirmar a forma que você prefere.",
+    resposta: "A gente combina na hora de marcar. Chama no WhatsApp que a gente te conta.",
   },
 ] as const;
 
 /** Links ancora do menu. */
 export const navegacao = [
-  { href: "#experiencia", rotulo: "A experiência" },
+  { href: "#espaco", rotulo: "O espaço" },
   { href: "#terapia-capilar", rotulo: "Head Spa" },
-  { href: "#body-therapy", rotulo: "Body Therapy" },
-  { href: "#galeria", rotulo: "O espaço" },
+  { href: "#body-therapy", rotulo: "Massagem" },
+  { href: "#galeria", rotulo: "Fotos" },
   { href: "#duvidas", rotulo: "Dúvidas" },
 ] as const;

@@ -12,7 +12,7 @@ export function WhatsAppFlutuante() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
-      className="fixed right-4 bottom-4 z-50 inline-flex min-h-14 min-w-14 items-center justify-center gap-2 rounded-full bg-marca px-4 font-medium text-fundo shadow-lg shadow-black/40 transition-colors hover:bg-marca-claro sm:right-6 sm:bottom-6"
+      className="fixed right-4 bottom-4 z-50 inline-flex min-h-14 min-w-14 items-center justify-center gap-2 rounded-full bg-marca px-4 font-medium text-fundo shadow-lg shadow-texto/25 transition-colors hover:bg-texto sm:right-6 sm:bottom-6"
     >
       <IconeWhatsApp className="size-6 shrink-0" />
       <span className="hidden text-sm sm:inline">Marcar horário</span>

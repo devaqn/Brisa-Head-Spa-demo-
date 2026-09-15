@@ -20,14 +20,14 @@ export default function Imagem() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0c0907",
+          background: "#faf5ee",
           padding: "64px 72px",
           fontFamily: "sans-serif",
-color: "#f5f1ea",
+color: "#2f1b08",
         }}
       >
         {/* Fio dourado no topo, como o do rodape do site. */}
-        <div style={{ display: "flex", height: 4, background: "#c9a55f", width: 140 }} />
+        <div style={{ display: "flex", height: 4, background: "#8a5f3c", width: 140 }} />
 
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
@@ -35,7 +35,7 @@ color: "#f5f1ea",
               fontSize: 26,
               letterSpacing: 6,
               textTransform: "uppercase",
-              color: "#c9a55f",
+              color: "#8a5f3c",
             }}
           >
             {site.descricaoCurta}
@@ -50,7 +50,7 @@ color: "#f5f1ea",
           >
             {site.bordao}
           </div>
-          <div style={{ fontSize: 30, marginTop: 24, color: "#b0a394" }}>
+          <div style={{ fontSize: 30, marginTop: 24, color: "#6b5340" }}>
             Terapia capilar · Massagem corporal · Escalda-pés
           </div>
         </div>
@@ -61,13 +61,13 @@ color: "#f5f1ea",
             justifyContent: "space-between",
             alignItems: "flex-end",
             fontSize: 26,
-            color: "#b0a394",
+            color: "#6b5340",
           }}
         >
           <div style={{ display: "flex" }}>
             {site.local.bairro}, {site.local.cidade}/{site.local.uf}
           </div>
-          <div style={{ display: "flex", color: "#c9a55f" }}>
+          <div style={{ display: "flex", color: "#8a5f3c" }}>
             {site.contato.telefoneExibicao}
           </div>
         </div>
